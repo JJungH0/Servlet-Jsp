@@ -1,27 +1,26 @@
+<!-- XML -->
 <configuration>
+    <property name="APP_LOG_DIR" value="${catalina.base:-.}/logs"/>
+
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <root level="INFO">
-        <appender-ref ref="STDOUT"/>
-    </root>
-
     <appender name="APP_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>logs/app.log</file> <!-- 현재 파일 -->
+        <file>${APP_LOG_DIR}/app.log</file>
         <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %X{traceId} %logger{36} - %msg%n</pattern>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n</pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>logs/app.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern> <!-- 날짜/인덱스별 -->
+            <fileNamePattern>${APP_LOG_DIR}/app.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy
                     class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <maxFileSize>50MB</maxFileSize> <!-- 하루 파일 50MB 넘어가면 분할 -->
+                <maxFileSize>50MB</maxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>
-            <maxHistory>30</maxHistory> <!-- 30일 보관 -->
-            <totalSizeCap>10GB</totalSizeCap> <!-- 전체 용량 상한 -->
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>10GB</totalSizeCap>
         </rollingPolicy>
     </appender>
 
@@ -29,5 +28,4 @@
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="APP_FILE"/>
     </root>
-
 </configuration>

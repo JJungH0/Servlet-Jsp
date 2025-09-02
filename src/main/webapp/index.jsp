@@ -8,8 +8,10 @@
 <h1><%= "Hello World!" %>
 </h1>
 <br/>
-<a href="/hi">Hello Servlet</a>
-<a href="/log">Log Servlet</a>
+<a href="/hi">Hi Servlet</a> <br>
+<a href="/log">Log Servlet</a> <br>
+<a href="/context">Context Servlet</a> <br>
+<a href="/now">Now Servlet</a>
 
 </body>
 </html>

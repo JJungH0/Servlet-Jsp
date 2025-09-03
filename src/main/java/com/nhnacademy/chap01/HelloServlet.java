@@ -14,7 +14,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @Slf4j
-@WebServlet("/hello")
+@WebServlet(value = "/hi",
+loadOnStartup = 1)
 public class HelloServlet extends HttpServlet{
 
     @Override
@@ -35,6 +36,7 @@ public class HelloServlet extends HttpServlet{
             throw new RuntimeException(e);
         }
     }
+
     @Override
     public void init(ServletConfig config) throws ServletException {
         log.info("before init!");

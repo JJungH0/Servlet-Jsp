@@ -12,9 +12,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.concurrent.ThreadPoolExecutor;
 
 @Slf4j
-@WebServlet("/now")
+@WebServlet(value = "/now",
+loadOnStartup = 2)
 public class NowServlet extends HttpServlet {
 
     @Override
@@ -45,5 +47,10 @@ public class NowServlet extends HttpServlet {
     public void init(ServletConfig config) throws ServletException {
         log.info("before init!");
         super.init(config);
+    }
+
+    @Override
+    public void destroy() {
+        log.info("before destroy!");
     }
 }

@@ -8,12 +8,13 @@
     <servlet>
         <servlet-name>helloServlet</servlet-name>
         <servlet-class>com.nhnacademy.hello.HelloServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
     </servlet>
 
 <!--    URL과 서블릿 이름 연결-->
     <servlet-mapping>
         <servlet-name>helloServlet</servlet-name>
-        <url-pattern>/hi</url-pattern>
+        <url-pattern>/hello</url-pattern>
     </servlet-mapping>
 
 </web-app>

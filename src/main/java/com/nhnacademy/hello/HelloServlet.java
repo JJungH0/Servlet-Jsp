@@ -6,11 +6,21 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Objects;
 
 public class HelloServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
+        String title = getServletConfig().getInitParameter("title");
+        String name = getServletConfig().getInitParameter("name");
+
+        if (Objects.isNull(title)) {
+            title = "Mr.";
+        }
+        if (Objects.isNull(name)) {
+            name = "Anonymous";
+        }
         /**
          * 응답 데이터 문자 인코딩 UTF-8 지정
          */
@@ -31,6 +41,7 @@ public class HelloServlet extends HttpServlet {
                 pw.println("<body>");
                     pw.print("<h1> Hello Servlet! </h1>");
                     pw.println("<h1> 안녕 서블릿! </h1>");
+            pw.printf("<h1> hello %s %s </h1>\n", title, name);
                 pw.print("</body>");
             pw.println("</html>");
         } catch (IOException e) {

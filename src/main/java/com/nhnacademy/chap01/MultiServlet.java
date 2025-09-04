@@ -16,8 +16,10 @@ public class MultiServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)throws IOException {
         String[] values = req.getParameterValues("class");
+        String url = getServletContext().getInitParameter("url");
         try (PrintWriter pw = new PrintWriter(resp.getWriter())) {
             pw.println(String.join(",", values));
+            pw.printf("url: %s\n", url);
         } catch (IOException e) {
             log.info(e.getMessage());
 

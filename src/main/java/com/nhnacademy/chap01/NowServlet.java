@@ -38,7 +38,10 @@ public class NowServlet extends HttpServlet {
                 pw.println("<body>");
                     pw.println("<h1> 현재 시간 </h1>");
                     pw.println(String.format("<h1> %s </h1>",nowDateTimeToString));
-                    pw.printf("<h1> counter : %d </h1>\n",getServletContext().getAttribute("counter"));
+            /**
+             * 전역 보관함의 counter 현재 값 출력
+             */
+            pw.printf("<h1> counter : %d </h1>\n",getServletContext().getAttribute("counter"));
                 pw.println("</body>");
             pw.println("</html>");
         } catch (IOException e) {

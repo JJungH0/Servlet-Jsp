@@ -14,7 +14,9 @@
 <a href="/context">Context Servlet</a> <br>
 <a href="/now">Now Servlet</a> <br>
 <a href="/beautify.html">Beautify Servlet</a> <br>
-<a href="/multi.html">Multi Servlet</a>
+<a href="/multi.html">Multi Servlet</a> <br>
+<a href="/counter">Counter Servlet</a> <br>
+<a href="/req.html">Request Servlet</a> <br>
 
 </body>
 </html>

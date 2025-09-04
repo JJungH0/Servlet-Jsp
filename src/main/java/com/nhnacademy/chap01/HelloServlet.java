@@ -29,6 +29,8 @@ public class HelloServlet extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
 //        resp.setContentType("text/html; charset=UTF-8");
 //        resp.setCharacterEncoding("utf-8");
+        CounterUtils.increaseCounter(getServletContext());
+
         String title = getServletConfig().getInitParameter("title");
         String name = getServletConfig().getInitParameter("name");
         if (Objects.isNull(title)) {
@@ -47,6 +49,7 @@ public class HelloServlet extends HttpServlet{
                     pw.println("<h1>hello servlet!</h1>");
                     pw.println("<h1>안녕 서블릿!</h1>");
                     pw.printf("<h1>안녕 %s %s </h1>\n",title,name);
+                    pw.printf("<h1> counter : %d</h1>\n",getServletContext().getAttribute("counter"));
                 pw.println("</body>");
             pw.printf("</html>");
         } catch (IOException e) {

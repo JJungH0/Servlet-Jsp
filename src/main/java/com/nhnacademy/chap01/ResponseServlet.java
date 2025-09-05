@@ -42,17 +42,17 @@ public class ResponseServlet extends HttpServlet {
             log.info("userId:{}", userId);
             if (Objects.isNull(userId) || userId.isEmpty()) {
                 /**
-                 * Response 초기화 :
+                 * Response 상태/헤더/바디 모두 초기화 :
                  */
                 resp.reset();
 
-                resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-                resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR,
+//                resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+                resp.sendError(HttpServletResponse.SC_BAD_REQUEST,
                         "name is empty");
                 return;
             }
             String redirect = req.getParameter("redirect");
-            if (Objects.nonNull(redirect)) {
+            if (Objects.nonNull(redirect) && !redirect.isBlank()) {
                 resp.sendRedirect(redirect);
                 return;
             }
@@ -61,10 +61,9 @@ public class ResponseServlet extends HttpServlet {
             pw.println("request uri = " + req.getRequestURI());
             /**
              * reset buffer :
-             * -> response 객체에 담겨있던 모든 buffer 초기화
+             * -> Response Body만 초기화
              */
             resp.resetBuffer();
-
             pw.println("User-Agent header = " + req.getHeader("User-Agent"));
         } catch (IOException e) {
             log.error("/req : {}", e.getMessage(), e);

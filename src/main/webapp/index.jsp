@@ -17,7 +17,7 @@
 <a href="/multi.html">Multi Servlet</a> <br>
 <a href="/counter">Counter Servlet</a> <br>
 <a href="/req.html">Request Servlet</a> <br>
-<a href="/resp.html">Response Servlet</a>
-
+<a href="/resp.html">Response Servlet</a> <br>
+<a href="/locale.html">Locale Servlet</a>
 </body>
 </html>

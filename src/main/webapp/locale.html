@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>read-cookie-test</title>
+</head>
+<body>
+<ol>
+    <li><a href="/set-cookie?locale=ko">ko</a></li>
+    <li><a href="/set-cookie?locale=en">en</a></li>
+    <li><a href="/read-cookie">read-cookie</a></li>
+
+</ol>
+<hr>
+<button onclick="createMyCookie()">쿠키 생성</button>
+<p>
+    <small>버튼을 클릭하면 'myName'과 'myAge' 쿠키가 생성됩니다.</small>
+</p>
+
+<script>
+    function setCookie(name, value, days) {
+        let expires = "";
+        if (days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + value  + expires + "; path=/";
+    }
+
+    function createMyCookie() {
+        setCookie("myName", "junghwan", 7);
+        setCookie("myAge", 27, 7);
+
+        alert("myName과 myAge 쿠키가 생성되었습니다.");
+    }
+</script>
+</body>
+</html>

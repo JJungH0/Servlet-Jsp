@@ -18,6 +18,7 @@
 <a href="/counter">Counter Servlet</a> <br>
 <a href="/req.html">Request Servlet</a> <br>
 <a href="/resp.html">Response Servlet</a> <br>
-<a href="/locale.html">Locale Servlet</a>
+<a href="/locale.html">Locale Servlet</a> <br>
+<a href="/login.html">Login Servlet</a>
 </body>
 </html>

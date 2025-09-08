@@ -1,5 +1,6 @@
 package com.nhnacademy.chap01;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 
@@ -40,9 +41,20 @@ public class LogoutServlet extends HttpServlet {
         if (Objects.nonNull(cookie)) {
             cookie.setValue("");
             cookie.setMaxAge(0);
+            cookie.setPath("/");
             resp.addCookie(cookie);
         }
+        /**
+         * 로그아웃시 어떤 게 적절한가?
+         * -> 보통은 리다이렉트가 적절
+         * -> PRG 패턴 (Post||Redirect||Get)과 동일한 이유로,
+         *      새로고침 시 중복 동작을 피하고 URL도 로그인 페이지로 명확히 바뀜
+         * -> 포워드는 서버 내부 이동이라 URL이 /logout으로 남고, 사용자가 새로고침
+         *      하면 다시 로그아웃 동작을 유발할 수 있어서 UX가 좋지 않음.
+         */
         resp.sendRedirect("/login.html");
+//        RequestDispatcher rd = req.getRequestDispatcher("/logout.html");
+//        rd.forward(req, resp);
 
     }
 }

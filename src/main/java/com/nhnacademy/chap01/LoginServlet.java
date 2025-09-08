@@ -1,5 +1,6 @@
 package com.nhnacademy.chap01;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebInitParam;
@@ -88,7 +89,10 @@ public class LoginServlet extends HttpServlet {
             resp.sendRedirect("/login");
         } else {
             log.error("아이디 / 패스워드가 일치하지 않습니다.");
-            resp.sendRedirect("/login.html");
+            RequestDispatcher rd = req.getRequestDispatcher("/login.html");
+            rd.forward(req, resp);
+            log.error("id {}",id);
+//            resp.sendRedirect("/login.html");
         }
     }
 

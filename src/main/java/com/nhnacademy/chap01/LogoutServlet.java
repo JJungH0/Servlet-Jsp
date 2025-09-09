@@ -1,6 +1,5 @@
 package com.nhnacademy.chap01;
 
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 

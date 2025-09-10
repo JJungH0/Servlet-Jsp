@@ -48,4 +48,18 @@
         <location>/error/500.html</location>
     </error-page>
 
+<!--    필터 등록-->
+    <filter>
+        <filter-name>characterEncdoingFilter</filter-name>
+        <filter-class>com.nhnacademy.chap02.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>characterEncdoingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
 </web-app>

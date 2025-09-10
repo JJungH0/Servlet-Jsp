@@ -13,24 +13,24 @@ public class ChainMain {
         orderPageRequest.put("member", Member.createManger("anonymous", "아무개", "1234"));
 
         Request mainPageRequest = new Request("/main");
-        orderPageRequest.put("member", Member.createManger("anonymous", "아무개", "1234"));
+        mainPageRequest.put("member", Member.createManger("anonymous", "아무개", "1234"));
 
 
         System.out.println("################## /myPage 요청 ##################");
-        HttpRequest httpRequest1 = new HttpRequest();
-        httpRequest1.doRequest(myPageRequest);
+        HttpRequest httpRequest = new HttpRequest();
+        httpRequest.doRequest(myPageRequest);
 
         System.out.println("################## /adminPage 요청 ##################");
-        HttpRequest httpRequest2 = new HttpRequest();
-        httpRequest2.doRequest(adminPageRequest);
+//        HttpRequest httpRequest2 = new HttpRequest();
+        httpRequest.doRequest(adminPageRequest);
 
 
         System.out.println("################## /orderPage 요청 ##################");
-        HttpRequest httpRequest3 = new HttpRequest();
-        httpRequest3.doRequest(orderPageRequest);
+//        HttpRequest httpRequest3 = new HttpRequest();
+        httpRequest.doRequest(orderPageRequest);
 
         System.out.println("################## /mainPage 요청 ##################");
-        HttpRequest httpRequest4 = new HttpRequest();
-        httpRequest4.doRequest(mainPageRequest);
+//        HttpRequest httpRequest4 = new HttpRequest();
+        httpRequest.doRequest(mainPageRequest);
     }
 }

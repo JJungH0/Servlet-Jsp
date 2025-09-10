@@ -21,6 +21,11 @@ public class LoginCheckFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
+        /**
+         * web.xml에서 정의한 초기 init값을 가져옴
+         * -> "," 기준으로 쪼갠후
+         *      앞뒤 공백을 제거하여 Set에 저장 (= 중복값 없음 )
+         */
         String urls = filterConfig.getInitParameter("exclude-urls");
         log.info("exclude-urls:{}", urls);
 
@@ -37,12 +42,26 @@ public class LoginCheckFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) servletRequest;
         HttpServletResponse resp = (HttpServletResponse) servletResponse;
 
+        /**
+         * 현재 URL
+         */
         String uri = req.getRequestURI();
 
+        /**
+         * 제외 목록에 없다면 (= 검사 대상)
+         */
         if (!excludeUrls.contains(uri)) {
+            /**
+             * 세션은 새로 만들지 않고 기존 값만 검사 없다면 Null
+             */
             HttpSession session = req.getSession(false);
+            /**
+             * 세션이 존재 하지 않다면 로직 수행
+             */
             if (Objects.isNull(session)) {
-                resp.sendRedirect("/login.html");
+                RequestDispatcher rd = req.getRequestDispatcher("/login");
+                rd.forward(servletRequest,servletResponse);
+//                resp.sendRedirect("/login");
                 return;
             }
         }

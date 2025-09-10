@@ -20,7 +20,7 @@ public final class CounterUtils {
          * -> 값 하나 증가시킨후 다시 전역 보관함에 저장
          */
         Long counter = (Long)Optional.ofNullable(context.getAttribute("counter"))
-                .orElse(0L);
+                .orElse(1000L);
         counter++;
         context.setAttribute("counter", counter);
     }

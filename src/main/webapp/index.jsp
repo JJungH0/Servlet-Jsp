@@ -19,6 +19,8 @@
 <a href="/req.html">Request Servlet</a> <br>
 <a href="/resp.html">Response Servlet</a> <br>
 <a href="/locale.html">Locale Servlet</a> <br>
-<a href="/login.html">Login Servlet</a>
+<a href="/login.html">Login Servlet</a> <br>
+<a href="/get.html">Get Html</a> <br/>
+<a href="/post.html">Post Html</a>
 </body>
 </html>

@@ -61,6 +61,7 @@ public class LoginServlet extends HttpServlet {
                 pw.println("<body>");
                 pw.println("login success : id =" + session.getAttribute("id") + "<br/>");
                 pw.println("<a href='/logout'> logout</a>");
+                pw.println("<a href='/'> home</a>");
                 pw.println("</body>");
                 pw.println("</html>");
             }

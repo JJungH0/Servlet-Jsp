@@ -21,6 +21,8 @@
 <a href="/locale.html">Locale Servlet</a> <br>
 <a href="/login.html">Login Servlet</a> <br>
 <a href="/get.html">Get Html</a> <br/>
-<a href="/post.html">Post Html</a>
+<a href="/post.html">Post Html</a> <br/>
+<a href="/fileUpload.html">File Upload Html</a>
+
 </body>
 </html>

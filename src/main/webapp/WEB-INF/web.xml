@@ -19,10 +19,20 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
+    <servlet>
+        <servlet-name>fileUploadServlet</servlet-name>
+        <servlet-class>com.nhnacademy.chap02.FileUploadServlet</servlet-class>
+    </servlet>
+
 <!--    URL과 서블릿 이름 연결-->
     <servlet-mapping>
         <servlet-name>helloServlet</servlet-name>
         <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>fileUploadServlet</servlet-name>
+        <url-pattern>/file/fileUpload</url-pattern>
     </servlet-mapping>
 
     <context-param>

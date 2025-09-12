@@ -27,6 +27,5 @@ public class WebAppInitializer implements ServletContainerInitializer {
          */
         servletContext.setInitParameter("url", "https://nhnacademy.com");
         servletContext.setInitParameter("counterFileName", "counter.dat");
-
     }
 }

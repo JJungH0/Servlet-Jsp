@@ -19,10 +19,10 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
-    <servlet>
-        <servlet-name>fileUploadServlet</servlet-name>
-        <servlet-class>com.nhnacademy.chap02.FileUploadServlet</servlet-class>
-    </servlet>
+<!--    <servlet>-->
+<!--        <servlet-name>fileUploadServlet</servlet-name>-->
+<!--        <servlet-class>com.nhnacademy.chap02.FileUploadServlet</servlet-class>-->
+<!--    </servlet>-->
 
 <!--    URL과 서블릿 이름 연결-->
     <servlet-mapping>
@@ -30,15 +30,15 @@
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
 
-    <servlet-mapping>
-        <servlet-name>fileUploadServlet</servlet-name>
-        <url-pattern>/file/fileUpload</url-pattern>
-    </servlet-mapping>
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>fileUploadServlet</servlet-name>-->
+<!--        <url-pattern>/file/fileUpload</url-pattern>-->
+<!--    </servlet-mapping>-->
 
-    <context-param>
-        <param-name>url</param-name>
-        <param-value>https://nhnacademy.com/</param-value>
-    </context-param>
+<!--    <context-param>-->
+<!--        <param-name>url</param-name>-->
+<!--        <param-value>https://nhnacademy.com/</param-value>-->
+<!--    </context-param>-->
 
     <welcome-file-list>
         <welcome-file>/index.jsp</welcome-file>
@@ -59,10 +59,10 @@
         <location>/error/500.html</location>
     </error-page>
 
-    <context-param>
-        <param-name>counterFileName</param-name>
-        <param-value>counter.dat</param-value>
-    </context-param>
+<!--    <context-param>-->
+<!--        <param-name>counterFileName</param-name>-->
+<!--        <param-value>counter.dat</param-value>-->
+<!--    </context-param>-->
 
 <!--    필터 등록-->
     <filter>

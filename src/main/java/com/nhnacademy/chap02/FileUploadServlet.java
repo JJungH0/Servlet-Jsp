@@ -23,6 +23,10 @@ import java.io.IOException;
  *      각 업로드 항목은 Part로 다뤄짐
  */
 @Slf4j
+@WebServlet(
+        name = "fileUploadServlet",
+        urlPatterns = "/file/fileUpload"
+)
 @MultipartConfig(
         fileSizeThreshold = 1024 * 1024 * 1, // 1MB: 이하면 메모리, 초과하면 임시 디스크
         maxFileSize = 1024 * 1024 * 10, // 10MB: 단일 파일 제한

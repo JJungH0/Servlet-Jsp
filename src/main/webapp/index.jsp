@@ -22,7 +22,8 @@
 <a href="/login.html">Login Servlet</a> <br>
 <a href="/get.html">Get Html</a> <br/>
 <a href="/post.html">Post Html</a> <br/>
-<a href="/fileUpload.html">File Upload Html</a>
+<a href="/fileUpload.html">File Upload Html</a> <br/>
+<a href="/fileDownload.html">File Download Html</a>
 
 </body>
 </html>
